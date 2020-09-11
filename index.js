@@ -236,14 +236,12 @@ function getArtistByIndex(array, index) {
 function get20s(arr){
     let tcArray = []
     for (i = 0; i < arr.length; i++){
-     if (mySplit[i] < ){
-       tcArray.push(mySplit[i])
+     if (arr[i].years.split("-") > "1900" && arr[i].years.split("-") < "2000")
+       tcArray.push(arr[i].name)
      }
-
+     return tcArray 
     }
-   return tcArray
-
-}
+   
 console.log(get20s(artists))
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -279,11 +277,11 @@ At the end, this function should return the new array with information added"*/
 
 function addArtist(arr3, info){
   let newArr2 = []
-  arr3.push({info})
+  arr3.push(info)
   newArr2.push(arr3)
     return newArr2
   }
-console.log(addArtist(artists, "id: 20, name:Jack, years:1995-2020, genre: web design, nationality: usa, bio:lambda web dev student"))
+console.log(addArtist(artists, {"id": 20, "name": "Jack", "years": "1995-2020", "genre": "web design", "nationality": "usa", "bio":"lambda web dev student"}))
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
     (1) artists array 
@@ -296,7 +294,7 @@ function lotsOfArt(arr4){
  newArr3 = []
  for (let i = 0; i < arr4.length; i++){
    if (arr4[i].paintings > 100)  {
-     newArr3.push(arr4[i])
+     newArr3.push(arr4[i].name)
  }
  
 
